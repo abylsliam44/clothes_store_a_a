@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     });
 
-    // Currency Exchange API integration
+    
     const exchangeContainer = document.querySelector(".exchange-container");
 
     function fetchKZTExchangeRates() {
