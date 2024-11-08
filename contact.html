@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - A&A Clothing Store</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+    <script src="app_contact.js" defer></script>
+</head>
+<body>
+
+    <header id="site-header" class="bg-dark text-white text-center py-3">
+        <h1 class="site-title">A&A CLOTHING STORE</h1>
+    </header>
+
+    <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="shop.html">Catalog</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="container mt-5">
+        <div class="row">
+            
+            <div class="col-lg-8">
+                <h2 class="text-center">Contact Us</h2>
+                <p class="text-center">If you have any questions or need assistance, please reach out to us using the contact form below.</p>
+                
+                
+                <div class="contact-image text-center mb-4">
+                    <img src="images_abylay/astana.jpg" alt="Contact Image" id="image-for-contact" class="img-fluid mx-auto d-block">
+                </div>
+
+                <form id="contactForm" class="contact-form mt-4 p-4">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Select Interest:</label>
+                        <select id="interest" name="interest" class="form-control">
+                            <option value="clothing">Clothing</option>
+                            <option value="denim">Denim</option>
+                            <option value="shoes">Shoes</option>
+                            <option value="accessories">Accessories</option>
+                            <option value="jewelry">Jewelry</option>
+                            <option value="gifts">Gifts</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-block">Submit</button>
+                </form>
+            </div>
+
+            
+            <aside class="col-lg-4">
+                
+                <div class="weather-container mb-4 p-3">
+                    <div class="weather-form mb-2">
+                        <input type="text" id="city-input" class="weather-input form-control" placeholder="Enter city">
+                        <button id="get-weather-btn" class="btn btn-dark mt-2">Get Weather</button>
+                    </div>
+                    <div id="weather-icon-container" class="mb-2">
+                        
+                        <img src="images_abylay/360_F_817114961_2K1wVrd89OwmaU36uGaMiEEXKnFYprWk.jpg" alt="Custom Weather Image" class="img-fluid" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+
+                        <img id="weather-icon" src="" alt="Weather Icon" style="width: 50px; display: none;">
+                    </div>
+                    <div class="weather-location" id="weather-location">Astana</div>
+                    <div class="weather-description" id="weather-description">Blowing snow</div>
+                    <div class="weather-temperature" id="weather-temperature">4°C</div>
+                </div>
+
+
+                <div class="exchange-container mb-4 p-3">
+                    <h4>Currency Exchange Rates (KZT)</h4>
+                    <p id="exchange-date">Date: --</p>
+                    <div id="exchange-rates">
+
+                    </div>
+                </div>
+
+                
+                <div class="quote-section mb-4 p-3">
+                    <h4>Quote of the Day</h4>
+                    <p id="quote-display" class="font-italic">"Elegance is the only beauty that never fades." – Audrey Hepburn</p>
+                </div>
+
+                
+                <div class="tips-section p-3">
+                    <h4>Fashion Tips</h4>
+                    <p id="fashion-tip-display">"Invest in a good pair of shoes – they elevate any outfit."</p>
+                    <button id="next-tip-btn" class="btn btn-secondary btn-sm mt-2">Next Tip</button>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <footer id="site-footer" class="bg-dark text-white text-center py-3">
+        <p>© 2024 A&A Clothing Store. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

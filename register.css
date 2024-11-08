@@ -1,0 +1,91 @@
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Centering container */
+.container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Header styling */
+h2 {
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Form input styling */
+.form-group label {
+    font-size: 1em;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(0, 115, 230, 0.2);
+}
+
+/* Register button styling */
+#submit-register {
+    background-color: #000000;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+#submit-register:hover {
+    background-color: #000000;
+}
+
+/* Text and link styling */
+p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+p a {
+    color: #000000;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .container {
+        padding: 15px;
+    }
+}

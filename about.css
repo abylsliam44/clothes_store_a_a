@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+#site-header {
+    background: linear-gradient(135deg, #000, #4a4a4a);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+#site-header:hover {
+    background: linear-gradient(135deg, #333, #666);
+}
+
+/* Main Section */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.section-heading {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.paragraph-text {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Star Rating Styles */
+.star-rating {
+    direction: rtl;
+    font-size: 24px;
+}
+
+.star-rating .fa {
+    color: #ddd;
+    cursor: pointer;
+}
+
+.star-rating .fa.checked {
+    color: #f39c12;
+}
+
+
+
+/* Footer Section */
+.footer-section {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* Стили для навигации */
+#main-nav {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    box-shadow: none;
+}
+
+/* Стили для ссылок навигации */
+.nav-link {
+    color: #000;
+    padding: 8px 20px; /* Уменьшено значение padding */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 5px; /* Уменьшено значение margin */
+    position: relative;
+    transition: color 0.3s ease;
+    font-size: 1.2em;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Эффект при наведении */
+.nav-link:hover {
+    color: #000;
+    transform: scale(1.05);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Уменьшили отступы между пунктами навигации */
+#main-nav .nav-item {
+    margin-left: 10px;  /* Уменьшили отступы */
+    margin-right: 10px; /* Уменьшили отступы */
+}
+
+button {
+    background: linear-gradient(135deg, #005f73, #0a9396); /* Новый сочетанный цвет */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #94d2bd, #0a9396); /* Эффект при наведении */
+}
+
+/* Темная тема для страницы about */
+body.dark {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Навигационная панель в темной теме */
+body.dark #main-nav {
+    background-color: #000;
+}
+
+body.dark #main-nav .navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-weight: bold;
+    background-color: transparent !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+body.dark #main-nav .navbar-nav .nav-link:hover {
+    color: #ffcc00 !important;
+}
+
+/* Стили для заголовков и текста */
+body.dark h1, 
+body.dark h2, 
+body.dark h3, 
+body.dark p, 
+body.dark .section-heading {
+    color: #ffffff;
+}
+
+/* Футер в темной теме */
+body.dark .footer-section {
+    background-color: #000;
+    color: #ffffff;
+}
+
+/* Кнопка переключения темной темы */
+#theme-toggle {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+#theme-toggle:hover {
+    background-color: #555;
+    color: #ffcc00;
+}
+/* Полностью черный фон для навигации и раскрывающейся части */
+body.dark #main-nav,
+body.dark .navbar-collapse,
+body.dark .navbar {
+    background-color: #000 !important; /* Принудительно черный фон */
+}
+
+/* Footer styling for dark theme */
+body.dark .footer-section {
+    background-color: #000 !important; /* Completely black background */
+    color: #ffffff !important; /* White text color */
+    border-top: 1px solid #333; /* Optional: a subtle border to separate the footer */
+}
+
+body {
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Transition effect for opacity */
+}
+
+.fade-out {
+    opacity: 0; /* Make the body transparent */
+}
+

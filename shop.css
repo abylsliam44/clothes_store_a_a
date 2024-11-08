@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+#site-header {
+    background: linear-gradient(135deg, #000, #4a4a4a);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+#site-header:hover {
+    background: linear-gradient(135deg, #333, #666);
+}
+/* Catalog Section */
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    text-align: center;
+}
+
+.product-title {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Image Styling */
+.image-thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Footer */
+.footer-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin-top: 20px;
+}
+
+.star-rating {
+    direction: rtl;
+    font-size: 24px;
+}
+
+.star-rating .fa {
+    color: #ddd;
+    cursor: pointer;
+}
+
+.star-rating .fa.checked {
+    color: #f39c12;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: background-color 0.5s ease;
+}
+
+/* Стили для заголовка */
+#site-header {
+    background: linear-gradient(135deg, #000, #4a4a4a);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 3.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для навигации */
+#main-nav {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    box-shadow: none;
+}
+
+/* Стили для ссылок навигации */
+.nav-link {
+    color: #000;
+    padding: 8px 20px; /* Уменьшено значение padding */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 5px; /* Уменьшено значение margin */
+    position: relative;
+    transition: color 0.3s ease;
+    font-size: 1.2em;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Эффект при наведении */
+.nav-link:hover {
+    color: #000;
+    transform: scale(1.05);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Уменьшили отступы между пунктами навигации */
+#main-nav .nav-item {
+    margin-left: 10px;  /* Уменьшили отступы */
+    margin-right: 10px; /* Уменьшили отступы */
+}
+
+
+/* Темная тема для страницы магазина */
+body.dark {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Навигационная панель в темной теме */
+body.dark #main-nav {
+    background-color: #000;
+}
+
+body.dark #main-nav .navbar-nav .nav-link {
+    color: #fff !important;
+    background-color: transparent !important;
+    box-shadow: none;
+}
+
+/* Стили для заголовков и текста */
+body.dark h1, 
+body.dark h2, 
+body.dark h3, 
+body.dark .card-title, 
+body.dark .card-text {
+    color: #fff;
+}
+
+/* Карточки товаров в темной теме */
+body.dark .card {
+    background-color: #000;
+    border: 1px solid #333;
+    color: #fff;
+}
+
+body.dark .card .item-button {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+body.dark .card .item-button:hover {
+    background-color: #555;
+}
+
+/* Футер в темной теме */
+body.dark .footer-section {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Полностью черный фон для навигации и раскрывающейся части */
+body.dark #main-nav,
+body.dark .navbar-collapse,
+body.dark .navbar {
+    background-color: #000 !important; /* Принудительно черный фон */
+}
+
+/* Footer styling for dark theme */
+body.dark .footer-section {
+    background-color: #000 !important; /* Completely black background */
+    color: #ffffff !important; /* White text color */
+    border-top: 1px solid #333; /* Optional: a subtle border to separate the footer */
+}
+
+body {
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Transition effect for opacity */
+}
+
+.fade-out {
+    opacity: 0; /* Make the body transparent */
+}

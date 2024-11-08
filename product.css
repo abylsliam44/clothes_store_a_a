@@ -1,0 +1,132 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+#site-header {
+    background: linear-gradient(135deg, #000, #4a4a4a);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+#site-header:hover {
+    background: linear-gradient(135deg, #333, #666);
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+}
+
+.product-image {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-image img {
+    width: 100%;
+    max-width: 400px;
+}
+
+.thumbnail-list {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.thumbnail-list img {
+    width: 60px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.product-details {
+    width: 40%;
+}
+
+.product-price {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.size-options button {
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.size-options button.active {
+    background-color: #333;
+    color: white;
+}
+
+.add-to-cart {
+    margin-top: 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, #000, #4a4a4a); /* Цвет навбара */
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background: linear-gradient(135deg, #333, #666); /* Эффект при наведении */
+}
+
+#read-more-btn {
+    background: linear-gradient(135deg, #000, #4a4a4a); /* Цвет навбара */
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+#read-more-btn:hover {
+    background: linear-gradient(135deg, #333, #666); /* Эффект при наведении */
+}
+
+
+.footer-section {
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+
+
+/*анимация */
+.fade-in {
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.fade-in.show {
+    opacity: 1;
+}

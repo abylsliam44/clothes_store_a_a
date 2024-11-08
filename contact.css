@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header and Footer Styling */
+#site-header {
+    background: linear-gradient(135deg, #000, #4a4a4a);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.site-title {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+footer {
+    background: linear-gradient(135deg, #000, #4a4a4a);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Navigation Styling */
+#main-nav {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-link {
+    color: #000;
+    padding: 10px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+
+.nav-link:hover {
+    color: #555;
+}
+
+/* Right Panel Styling (Weather, Quotes, Exchange Rates) */
+aside {
+    margin-top: 20px;
+}
+
+.weather-container, .exchange-container, .quote-section, .fashion-tips-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-container:hover, .exchange-container:hover, .quote-section:hover, .fashion-tips-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    
+}
+
+/* Weather Styling */
+.weather-container h3 {
+    font-weight: bold;
+    color: #0073e6;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.weather-location {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+.weather-description {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.weather-temperature {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #0073e6;
+}
+
+.weather-icon {
+    width: 60px;
+    height: 60px;
+    margin: 10px 0;
+}
+
+.weather-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.weather-input input {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.weather-btn {
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.weather-btn:hover {
+    background-color: #555;
+}
+
+/* Currency Exchange Styling */
+.exchange-container h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.exchange-container p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Quote Section Styling */
+.quote-section h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #b8860b;
+    margin-bottom: 10px;
+}
+
+#quote-display {
+    font-size: 1.2em;
+    color: #555;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Fashion Tips Section */
+.fashion-tips-section h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#fashion-tip-display {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 10px;
+}
+
+.btn-tip {
+    background-color: #333;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-tip:hover {
+    background-color: #555;
+}
+
+#main-nav {
+    background-color: #fff;
+    padding: 10px 0; /* Убедитесь, что это значение соответствует about.css и shop.css */
+    border-bottom: 1px solid #ddd;
+    box-shadow: none;
+}
+
+.nav-link {
+    color: #000;
+    padding: 8px 20px; /* Это значение соответствует about.css и shop.css */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 5px; /* Это значение также синхронизировано */
+    position: relative;
+    transition: color 0.3s ease;
+    font-size: 1.2em;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover {
+    color: #000;
+    transform: scale(1.05);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+#main-nav .nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.currency-flag {
+    width: 24px; 
+    height: auto;
+    margin-right: 8px; 
+    vertical-align: middle; 
+}
+
+
+body {
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Transition effect for opacity */
+}
+
+.fade-out {
+    opacity: 0; /* Make the body transparent */
+}
+
+/* Default style for the specific Astana image */
+#image-for-contact {
+    filter: grayscale(100%); /* Make image black and white */
+    transition: filter 0.3s ease; /* Smooth transition for the filter change */
+}
+
+/* Style for the image on hover */
+#image-for-contact:hover {
+    filter: grayscale(0%); /* Remove the grayscale filter to show color */
+}
