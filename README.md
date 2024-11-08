@@ -96,7 +96,7 @@ An interactive background color feature allows users to change the look and feel
 ## Instructions for Setup and Running
 
 1. Clone the GitHub repository:
-      git clone https://github.com/abylsliam44/a-a_store
+      git clone https://github.com/abylsliam44/clothes_store_a_a
    
 
 2. Navigate into the project directory:
