@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 errorMessage.textContent = "City not found or network issue. Please try again.";
                 errorMessage.style.display = 'block';
 
-                // Default message if an error occurs
+
                 weatherLocation.textContent = "Astana";
                 weatherDescription.textContent = "Unknown";
                 weatherTemperature.textContent = "N/A";
