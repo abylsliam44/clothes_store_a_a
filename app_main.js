@@ -343,6 +343,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
 document.addEventListener("DOMContentLoaded", function() {
     const openChatbotBtn = document.getElementById("open-chatbot-btn");
     const chatbotContainer = document.getElementById("chatbot-container");
@@ -350,16 +351,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const chatbotInput = document.getElementById("chatbot-input");
     const chatbotMessages = document.getElementById("chatbot-messages");
     const chatbotSendBtn = document.getElementById("chatbot-send-btn");
+    const themeToggleBtn = document.getElementById("toggle-theme-btn"); // Button to toggle theme
 
     // Load sound effect
-    const sendSound = new Audio("sound_abylay/level-up-191997.mp3"); // Replace with the path to your sound file
+    const sendSound = new Audio("sound_abylay/level-up-191997.mp3");
 
     // Show chatbot and display instructions
     openChatbotBtn.addEventListener("click", () => {
         chatbotContainer.style.display = "block";
         openChatbotBtn.style.display = "none";
-        
-        // Display initial instruction message
         displayInstructions();
     });
 
@@ -377,7 +377,7 @@ document.addEventListener("DOMContentLoaded", function() {
         chatbotMessages.appendChild(message);
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 
-        // Play sound effect for each sent message
+        // Play sound effect for user messages
         if (isUser) sendSound.play();
     }
 
@@ -415,11 +415,9 @@ document.addEventListener("DOMContentLoaded", function() {
     function sendMessage() {
         const userMessage = chatbotInput.value.trim();
         if (userMessage) {
-            // Display user's message
             addMessageToChat(userMessage, true);
             chatbotInput.value = "";
             
-            // Generate bot response after a short delay
             setTimeout(() => {
                 const botResponse = getBotResponse(userMessage);
                 addMessageToChat(botResponse);
@@ -431,73 +429,75 @@ document.addEventListener("DOMContentLoaded", function() {
     chatbotSendBtn.addEventListener("click", sendMessage);
 
     // Event listener for "Enter" key in the input field
-    chatbotInput.addEventListener("keypress", (e) => {
+    chatbotInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
-            e.preventDefault(); // Prevents page reload when pressing Enter
+            e.preventDefault(); // Prevents page reload or form submission
             sendMessage();
         }
     });
-});
-document.addEventListener("DOMContentLoaded", function() {
-    const links = document.querySelectorAll("a"); // Select all anchor links
-    const buttons = document.querySelectorAll("button:not(#chatbot-send-btn, #chatbot-close-btn)"); // Select all buttons except chatbot buttons
-    const shopNowBtn = document.getElementById("shop-now-btn"); // Select Shop Now button
-    const learnMoreBtn = document.getElementById("learn-more-btn"); // Select Learn More button
 
-    // Function to handle navigation with fade effect
-    function handleNavigation(href) {
-        document.body.classList.add("fade-out"); // Add fade-out class
-
-        // Wait for the transition to finish, then navigate
-        setTimeout(() => {
-            window.location.href = href; // Navigate to the new page
-        }, 300); // Match this duration with the CSS transition time
+    // Theme toggle functionality
+    const currentTheme = localStorage.getItem("theme") || "light";
+    if (currentTheme === "dark") {
+        document.body.classList.add("dark");
+        themeToggleBtn.textContent = "Switch to Light Mode";
+    } else {
+        document.body.classList.add("light");
+        themeToggleBtn.textContent = "Switch to Dark Mode";
     }
 
-    // Add event listener for all anchor links
-    links.forEach(link => {
-        link.addEventListener("click", function(e) {
-            const href = this.getAttribute("href"); // Get the href of the clicked link
-            
-            // Check if the href is not from the chatbot or carousel buttons
-            if (!href.includes("chatbot") && !href.includes("carousel")) {
-                e.preventDefault(); // Prevent the default link behavior
-                handleNavigation(href); // Handle navigation with fade effect
-            }
-        });
-    });
-
-    // Add event listener for all buttons except the chatbot buttons
-    buttons.forEach(button => {
-        button.addEventListener("click", function(e) {
-            const href = this.getAttribute("data-href"); // Get the data-href for navigation
-            if (href) {
-                e.preventDefault(); // Prevent the default button behavior
-                handleNavigation(href); // Handle navigation with fade effect
-            }
-        });
-    });
-
-    // Event listeners for the specific buttons
-    shopNowBtn.addEventListener("click", function(e) {
-        e.preventDefault();
-        handleNavigation("shop.html"); // Navigate to shop page
-    });
-
-    learnMoreBtn.addEventListener("click", function(e) {
-        e.preventDefault();
-        handleNavigation("about.html"); // Navigate to about page
-    });
-
-    // Prevent the enter key from causing navigation on the entire document
-    document.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") {
-            e.preventDefault(); // Prevent the default action for the Enter key
+    themeToggleBtn.addEventListener("click", function () {
+        if (document.body.classList.contains("light")) {
+            document.body.classList.remove("light");
+            document.body.classList.add("dark");
+            themeToggleBtn.textContent = "Switch to Light Mode";
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.body.classList.remove("dark");
+            document.body.classList.add("light");
+            themeToggleBtn.textContent = "Switch to Dark Mode";
+            localStorage.setItem("theme", "light");
         }
     });
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Function to handle the fade-out transition
+    function addFadeOutTransition(event, targetUrl) {
+        event.preventDefault();
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+            window.location.href = targetUrl;
+        }, 500); // 500ms delay for fade-out effect
+    }
 
+    // Apply fade-out transition for main navigation links
+    document.querySelectorAll("#main-nav .nav-link").forEach(link => {
+        link.addEventListener("click", function (event) {
+            addFadeOutTransition(event, this.href);
+        });
+    });
 
+    // Apply fade-out transition for #shop-now-btn and #learn-more-btn buttons
+    document.querySelectorAll("#shop-now-btn, #learn-more-btn").forEach(button => {
+        button.addEventListener("click", function (event) {
+            addFadeOutTransition(event, this.getAttribute("data-href"));
+        });
+    });
+
+    
+    document.querySelectorAll(".category-item").forEach(link => {
+        link.addEventListener("click", function (event) {
+            addFadeOutTransition(event, this.href);
+        });
+    });
+
+    
+    document.querySelectorAll(".btn-animate").forEach(button => {
+        button.addEventListener("click", function (event) {
+            addFadeOutTransition(event, this.href);
+        });
+    });
+});
 

@@ -6,7 +6,6 @@
     <title>A&A - About Us</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="about.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 
@@ -14,7 +13,7 @@
         <h1 class="site-title">A&A Clothing Store</h1>
     </header>
 
-    <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-light">
+     <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,6 +22,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="shop.html">Catalog</a>
                 </li>
@@ -38,68 +38,67 @@
 
     <main class="container mt-5">
         <section id="about">
-            <h2 class="section-heading">About Us</h2>
-            <p class="paragraph-text">A&A is one of the leading global brands in the fashion industry.</p>
-            <p class="paragraph-text">We take pride in our approach, combining creativity, innovation, and accessibility for everyone.</p>
+            <h2 class="section-heading text-center">About Us</h2>
+            <p class="paragraph-text text-center">A&A is one of the leading global brands in the fashion industry.</p>
+            <p class="paragraph-text text-center">We take pride in our approach, combining creativity, innovation, and accessibility for everyone.</p>
 
-            <h2 class="section-heading mt-5">Our Founders</h2>
-            <p class="paragraph-text">A&A Clothing Store was founded by two childhood friends, Azan and Abylay, who shared a deep passion for fashion and retail. Living in Astana, they decided to merge their talents and open a store that represents high-quality, sustainable, and innovative fashion products. Today, A&A Clothing Store is a recognized name in the fashion industry.</p>
+            <h2 class="section-heading text-center mt-5">Our Founders</h2>
+            <div class="founders-container">
+                <div class="founder-profile">
+                    <a href="https://www.instagram.com/orunbekazan/" target="_blank">
+                        <img src="images_azan/admin2.jpg" alt="Azan's photo" class="founder-photo">
+                    </a>
+                    <h3>Azan</h3>
+                    <p class="paragraph-text text-center">
+                        A&A Clothing Store was co-founded by Azan, who met Abylay at Astana IT University.
+                        Together, they shared a passion for fashion and started the brand as a hobby, which quickly grew into a recognized name in the industry.
+                    </p>
+                </div>
+                <div class="founder-profile">
+                    <a href="https://www.instagram.com/abylsliam44/" target="_blank">
+                        <img src="images_azan/admin1.jpg" alt="Abylay's photo" class="founder-photo">
+                    </a>
+                    <h3>Abylay</h3>
+                    <p class="paragraph-text text-center">
+                        Abylay co-founded A&A Clothing Store with Azan, his friend from Astana IT University.
+                        Their shared vision and passion for sustainable fashion transformed their hobby into a successful brand.
+                    </p>
+                </div>
+            </div>
         </section>
 
-        <section>
+        <section class="values-section text-center mt-5">
             <h2 class="section-heading">Our Values</h2>
             <blockquote class="blockquote">"Fashion is not just about what you wear, but how you live." – A&A Design Team</blockquote>
             <h3>Key Principles:</h3>
-            <ol class="principles-list">
+            <ul class="principles-list">
                 <li>Innovation</li>
                 <li>Quality</li>
                 <li>Sustainability</li>
-            </ol>
+            </ul>
         </section>
 
         <!-- Read More Button and Hidden Section -->
-        <section class="mt-5">
+        <section class="read-more-section text-center mt-5">
             <button id="read-more-btn" class="btn btn-primary">Read More</button>
             <div id="extra-content" style="display: none;">
-                <p class="paragraph-text">At A&A, we strive to push boundaries in fashion and design. Our collections are not only visually stunning but also crafted with a commitment to sustainability and ethical practices. Join us in our mission to make fashion more responsible and inclusive.</p>
+                <p class="paragraph-text">
+                    At A&A, we strive to push boundaries in fashion and design. Our collections are not only visually stunning but also crafted with a commitment to sustainability and ethical practices. Join us in our mission to make fashion more responsible and inclusive.
+                </p>
             </div>
         </section>
         <!-- End of Read More Section -->
 
-        <!-- Theme Toggle Button (Updated) -->
-        <section id="extra-features" class="mt-5 text-center">
-            <button id="theme-toggle" class="btn btn-sm btn-warning">Toggle Dark/Light Theme</button>
-            <div id="date-time-display" class="mt-3"></div>
-        </section>
-
-        <!-- Star Rating Section -->
-        <section class="mt-5 text-center">
-            <h3>Rate Us:</h3>
-            <div class="star-rating">
-                <span class="fa fa-star" data-index="1"></span>
-                <span class="fa fa-star" data-index="2"></span>
-                <span class="fa fa-star" data-index="3"></span>
-                <span class="fa fa-star" data-index="4"></span>
-                <span class="fa fa-star" data-index="5"></span>
-            </div>
-        </section>
-
-        <!-- Button to Display Current Time -->
-        <section class="mt-5 text-center">
-            <h3>Check Current Time:</h3>
-            <button id="time-btn" class="btn btn-success">Show Current Time</button>
-            <div id="current-time-display" class="mt-3"></div>
-        </section>
-        <!-- End of Current Time Button -->
     </main>
 
-    <footer class="footer-section bg-light text-center py-3 mt-5">
-        <p>Designed by Azan and Abylay © 2024</p>
+    <footer class="footer-section text-center py-3 mt-5" style="background-color: #000; color: #fff;">
+        <p>Created by Slamzhanov Abylay, Orunbek Azan, 2024</p>
     </footer>
+    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="app_azan.js"></script> <!-- Скрипт для переключения темной темы -->
-
+    <script src="app_main.js"></script>
+    <script src="app_azan.js"></script>
 </body>
 </html>

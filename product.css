@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
@@ -129,4 +132,56 @@ body {
 
 .fade-in.show {
     opacity: 1;
+}
+
+/* General styling for the navigation bar */
+#main-nav {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    box-shadow: none;
+}
+
+/* Styling for navigation links */
+.nav-link {
+    font-family: 'Poppins', sans-serif; /* Match font with about.css */
+    color: #000;                        /* Text color */
+    padding: 8px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2em;                   /* Font size */
+    margin: 0 5px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Underline effect on hover */
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Hover effect */
+.nav-link:hover {
+    color: #000;
+    transform: scale(1.05);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Spacing between nav items */
+#main-nav .nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
 }

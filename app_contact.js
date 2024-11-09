@@ -1,5 +1,5 @@
+// Dynamic Messages Feature
 document.addEventListener('DOMContentLoaded', function () {
-    // Dynamic Message and Other Features
     const messages = [
         "Welcome to A&A Clothing Store!",
         "Explore the latest trends in fashion.",
@@ -17,8 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     setInterval(updateMessage, 2000);
+});
 
-    // Quote and Fashion Tips Features
+// Quote and Fashion Tips Feature
+document.addEventListener('DOMContentLoaded', function () {
     const quotes = [
         "Fashion is the armor to survive the reality of everyday life. – Bill Cunningham",
         "Style is a way to say who you are without having to speak. – Rachel Zoe",
@@ -52,8 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
         nextTipButton.addEventListener('click', showTip);
         showTip();
     }
+});
 
-    // Play sound on form submission
+// Contact Form Submission with Sound
+document.addEventListener('DOMContentLoaded', function () {
     const contactForm = document.getElementById('contactForm');
     const submitSound = new Audio('sound_abylay/level-up-191997.mp3');
     submitSound.onerror = () => alert("Error: Sound file could not be loaded. Check the path.");
@@ -61,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (contactForm) {
         contactForm.addEventListener('submit', function (event) {
             event.preventDefault();
-
             submitSound.play();
 
             const name = document.getElementById('name').value.trim();
@@ -84,23 +87,25 @@ document.addEventListener('DOMContentLoaded', function () {
             contactForm.reset();
         });
     }
+});
 
-    // Weather API integration without icon
+// Weather Feature
+document.addEventListener('DOMContentLoaded', function () {
     const cityInput = document.getElementById('city-input');
     const getWeatherBtn = document.getElementById('get-weather-btn');
     const weatherLocation = document.getElementById('weather-location');
     const weatherDescription = document.getElementById('weather-description');
     const weatherTemperature = document.getElementById('weather-temperature');
-
-    // Display error message for invalid city input
+    const weatherIcon = document.getElementById('weather-icon');
     const errorMessage = document.createElement('p');
+
     errorMessage.style.color = 'red';
     errorMessage.style.display = 'none';
     cityInput.parentNode.insertBefore(errorMessage, cityInput.nextSibling);
 
     getWeatherBtn.addEventListener('click', function () {
         const city = cityInput.value.trim() || 'Astana';
-
+        
         if (!city) {
             errorMessage.textContent = "Please enter a city name.";
             errorMessage.style.display = 'block';
@@ -109,16 +114,18 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMessage.style.display = 'none';
         }
 
-        fetch(`https://wttr.in/${city}?format=j1`)
+        fetch(`https://api.weatherapi.com/v1/current.json?key=c38993e436cd42f2925145022240911&q=${city}&aqi=no`)
             .then(response => {
                 if (!response.ok) throw new Error("City not found");
                 return response.json();
             })
             .then(data => {
-                const currentCondition = data.current_condition[0];
+                const current = data.current;
                 weatherLocation.textContent = city;
-                weatherDescription.textContent = currentCondition.weatherDesc[0].value || "Unknown";
-                weatherTemperature.textContent = `${currentCondition.temp_C || 'N/A'}°C`;
+                weatherDescription.textContent = current.condition.text || "Unknown";
+                weatherTemperature.textContent = `${current.temp_c}°C`;
+                weatherIcon.src = current.condition.icon;
+                weatherIcon.style.display = "block";
                 cityInput.value = '';
             })
             .catch(error => {
@@ -126,14 +133,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 errorMessage.textContent = "City not found or network issue. Please try again.";
                 errorMessage.style.display = 'block';
 
-
                 weatherLocation.textContent = "Astana";
                 weatherDescription.textContent = "Unknown";
                 weatherTemperature.textContent = "N/A";
+                weatherIcon.style.display = "none";
             });
     });
+});
 
-    
+// Currency Exchange Rates Feature
+document.addEventListener('DOMContentLoaded', function () {
     const exchangeContainer = document.querySelector(".exchange-container");
 
     function fetchKZTExchangeRates() {
@@ -157,12 +166,11 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchKZTExchangeRates();
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    
+// Keyboard Navigation Feature
+document.addEventListener('DOMContentLoaded', function () {
     const navItems = document.querySelectorAll("#main-nav .nav-link");
     let currentNavIndex = 0;
 
-    
     function updateNavFocus() {
         navItems.forEach((item, index) => {
             item.classList.toggle("focused", index === currentNavIndex);
@@ -170,27 +178,25 @@ document.addEventListener("DOMContentLoaded", function () {
         navItems[currentNavIndex].focus();
     }
 
-    
     updateNavFocus();
 
-    // Keyboard event handling for navigation
     document.addEventListener("keydown", function (event) {
         switch (event.key) {
-            case "ArrowRight": // Move to the next navigation item
+            case "ArrowRight":
                 currentNavIndex = (currentNavIndex + 1) % navItems.length;
                 updateNavFocus();
                 break;
-            case "ArrowLeft": // Move to the previous navigation item
+            case "ArrowLeft":
                 currentNavIndex = (currentNavIndex - 1 + navItems.length) % navItems.length;
                 updateNavFocus();
                 break;
-            case "Enter": // Activate the focused navigation item
+            case "Enter":
                 navItems[currentNavIndex].click();
                 break;
-            case "T": // Toggle theme
+            case "T":
                 document.getElementById("toggle-theme-btn").click();
                 break;
-            case "Escape": // Close popup if open
+            case "Escape":
                 const popupOverlay = document.getElementById("popup-overlay");
                 if (popupOverlay && popupOverlay.style.display === "flex") {
                     popupOverlay.style.display = "none";
@@ -200,23 +206,50 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
         }
     });
-
 });
 
+// Smooth Page Transition Feature
 document.addEventListener("DOMContentLoaded", function() {
-    const links = document.querySelectorAll("a"); // Select all anchor links
+    const links = document.querySelectorAll("a");
 
     links.forEach(link => {
         link.addEventListener("click", function(e) {
-            e.preventDefault(); // Prevent the default link behavior
-            const href = this.getAttribute("href"); // Get the href of the clicked link
+            e.preventDefault();
+            const href = this.getAttribute("href");
+            document.body.classList.add("fade-out");
 
-            document.body.classList.add("fade-out"); // Add fade-out class
-
-            // Wait for the transition to finish, then navigate
             setTimeout(() => {
-                window.location.href = href; // Navigate to the new page
-            }, 500); // Match this duration with the CSS transition time
+                window.location.href = href;
+            }, 500);
         });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const themeToggleButton = document.getElementById("toggle-theme-btn"); // Кнопка переключения темы
+    const savedTheme = localStorage.getItem("theme") || "light"; // Получаем сохраненную тему из localStorage
+
+    // Устанавливаем начальную тему при загрузке страницы
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark");
+        themeToggleButton.textContent = "Switch to Light Mode"; // Измените текст кнопки
+    } else {
+        document.body.classList.add("light");
+        themeToggleButton.textContent = "Switch to Dark Mode"; // Измените текст кнопки
+    }
+
+    // Слушатель событий для переключения темы
+    themeToggleButton.addEventListener("click", function () {
+        if (document.body.classList.contains("dark")) {
+            document.body.classList.remove("dark");
+            document.body.classList.add("light");
+            themeToggleButton.textContent = "Switch to Dark Mode";
+            localStorage.setItem("theme", "light"); // Сохраняем светлый режим в localStorage
+        } else {
+            document.body.classList.remove("light");
+            document.body.classList.add("dark");
+            themeToggleButton.textContent = "Switch to Light Mode";
+            localStorage.setItem("theme", "dark"); // Сохраняем темный режим в localStorage
+        }
     });
 });

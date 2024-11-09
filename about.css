@@ -8,6 +8,7 @@ body {
     color: #333;
 }
 
+
 #site-header {
     background: linear-gradient(135deg, #000, #4a4a4a);
     color: white;
@@ -16,24 +17,25 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease;
 }
 
 .site-title {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 3.5em;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: -1px;
     line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #site-header:hover {
     background: linear-gradient(135deg, #333, #666);
 }
 
-/* Main Section */
 main {
     max-width: 800px;
     margin: 20px auto;
@@ -50,21 +52,70 @@ main {
     line-height: 1.6;
 }
 
-/* Star Rating Styles */
-.star-rating {
-    direction: rtl;
-    font-size: 24px;
+/* Founder photos */
+.founders-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
 }
 
-.star-rating .fa {
-    color: #ddd;
+.founder-profile {
+    text-align: center;
+    max-width: 200px;
+}
+
+.founder-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #333;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.founder-photo:hover {
+    transform: scale(1.1);
+}
+
+/* Values Section Styling */
+.values-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+blockquote {
+    font-size: 18px;
+    font-style: italic;
+    color: #555;
+}
+
+.principles-list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+/* Read More Section Styling */
+#read-more-btn {
+    background: linear-gradient(135deg, #000, #4a4a4a); /* Цвет навбара */
+    color: white;
     cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    transition: background 0.3s ease;
 }
 
-.star-rating .fa.checked {
-    color: #f39c12;
+#read-more-btn:hover {
+    background: linear-gradient(135deg, #333, #666); /* Эффект при наведении */
 }
-
 
 
 /* Footer Section */
@@ -74,8 +125,7 @@ main {
     padding: 20px;
 }
 
-
-/* Стили для навигации */
+/* Общий стиль для навигационной панели */
 #main-nav {
     background-color: #fff;
     padding: 10px 0;
@@ -83,19 +133,20 @@ main {
     box-shadow: none;
 }
 
-/* Стили для ссылок навигации */
+/* Стили для элементов навигации */
 .nav-link {
     color: #000;
-    padding: 8px 20px; /* Уменьшено значение padding */
+    padding: 8px 20px;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
-    margin: 0 5px; /* Уменьшено значение margin */
+    margin: 0 5px;
     position: relative;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
     font-size: 1.2em;
 }
 
+/* Псевдоэлемент для линии под текстом */
 .nav-link::after {
     content: '';
     display: block;
@@ -119,94 +170,70 @@ main {
     width: 100%;
 }
 
-/* Уменьшили отступы между пунктами навигации */
+/* Отступы между элементами */
 #main-nav .nav-item {
-    margin-left: 10px;  /* Уменьшили отступы */
-    margin-right: 10px; /* Уменьшили отступы */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+/* Fade-out effect for smooth page transition */
+body.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-button {
-    background: linear-gradient(135deg, #005f73, #0a9396); /* Новый сочетанный цвет */
+footer {
+    background: linear-gradient(135deg, #000, #4a4a4a);
     color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    text-align: center;
+    padding: 20px;
 }
 
-button:hover {
-    background: linear-gradient(135deg, #94d2bd, #0a9396); /* Эффект при наведении */
-}
-
-/* Темная тема для страницы about */
+/* Темный стиль для основного фона страницы */
 body.dark {
-    background-color: #000;
-    color: #fff;
+    background-color: #000 !important;
+    color: #fff !important;
 }
 
-/* Навигационная панель в темной теме */
-body.dark #main-nav {
-    background-color: #000;
+/* Темный стиль для всех контейнеров и секций */
+body.dark #main-nav,
+body.dark #site-header,
+body.dark #site-footer,
+body.dark #content-wrapper,
+body.dark #sidebar-menu,
+body.dark #main-content,
+body.dark #banner-section,
+body.dark #greeting-section,
+body.dark #filter-section,
+body.dark .card,
+body.dark .list-group-item {
+    background-color: #000 !important;
+    color: #fff !important;
 }
 
-body.dark #main-nav .navbar-nav .nav-link {
-    color: #ffffff !important;
-    font-weight: bold;
-    background-color: transparent !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6,
+body.dark p, body.dark a, body.dark span, body.dark .category-item, body.dark .navbar-nav .nav-link {
+    color: #fff !important;
 }
 
-body.dark #main-nav .navbar-nav .nav-link:hover {
-    color: #ffcc00 !important;
-}
 
-/* Стили для заголовков и текста */
-body.dark h1, 
-body.dark h2, 
-body.dark h3, 
-body.dark p, 
-body.dark .section-heading {
-    color: #ffffff;
-}
-
-/* Футер в темной теме */
-body.dark .footer-section {
-    background-color: #000;
-    color: #ffffff;
-}
-
-/* Кнопка переключения темной темы */
-#theme-toggle {
-    background-color: #333;
-    color: #fff;
+body.dark button, body.dark .btn, body.dark #change-bg-btn {
+    color: #fff !important;
+    background-color: #333 !important;
     border: 1px solid #555;
 }
 
-#theme-toggle:hover {
-    background-color: #555;
-    color: #ffcc00;
-}
-/* Полностью черный фон для навигации и раскрывающейся части */
-body.dark #main-nav,
-body.dark .navbar-collapse,
-body.dark .navbar {
-    background-color: #000 !important; /* Принудительно черный фон */
+
+body.dark .navbar-nav .nav-link:hover, body.dark .navbar-nav .nav-link.active {
+    color: #ffcc00 !important;
 }
 
-/* Footer styling for dark theme */
-body.dark .footer-section {
-    background-color: #000 !important; /* Completely black background */
-    color: #ffffff !important; /* White text color */
-    border-top: 1px solid #333; /* Optional: a subtle border to separate the footer */
-}
 
-body {
-    opacity: 1;
-    transition: opacity 0.5s ease; /* Transition effect for opacity */
+body.dark #main-nav .navbar-nav .nav-link {
+    background-color: transparent !important;
+    color: #fff !important;
+    padding: 0 10px;
+    margin: 0;
+    box-shadow: none;
+    border: none;
 }
-
-.fade-out {
-    opacity: 0; /* Make the body transparent */
-}
-

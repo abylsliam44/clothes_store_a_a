@@ -253,15 +253,6 @@ aside {
 }
 
 
-body {
-    opacity: 1;
-    transition: opacity 0.5s ease; /* Transition effect for opacity */
-}
-
-.fade-out {
-    opacity: 0; /* Make the body transparent */
-}
-
 /* Default style for the specific Astana image */
 #image-for-contact {
     filter: grayscale(100%); /* Make image black and white */
@@ -270,5 +261,121 @@ body {
 
 /* Style for the image on hover */
 #image-for-contact:hover {
-    filter: grayscale(0%); /* Remove the grayscale filter to show color */
+    filter: grayscale(0%); 
 }
+
+
+body.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+#weather-icon {
+    display: block;
+    margin: 0 auto; 
+    width: 50px; 
+}
+
+/* Темный стиль для основного фона страницы */
+body.dark {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* Темный стиль для всех контейнеров и секций */
+body.dark #main-nav,
+body.dark #site-header,
+body.dark #site-footer,
+body.dark #content-wrapper,
+body.dark #sidebar-menu,
+body.dark #main-content,
+body.dark #banner-section,
+body.dark #greeting-section,
+body.dark #filter-section,
+body.dark .card,
+body.dark .list-group-item {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* Стили для текста и ссылок */
+body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6,
+body.dark p, body.dark a, body.dark span, body.dark .category-item, body.dark .navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+/* Белый цвет для всех кнопок в темной теме */
+body.dark button, body.dark .btn, body.dark #change-bg-btn {
+    color: #fff !important;
+    background-color: #333 !important;
+    border: 1px solid #555;
+}
+
+/* Темные стили для выделения элементов навигации */
+body.dark .navbar-nav .nav-link:hover, body.dark .navbar-nav .nav-link.active {
+    color: #ffcc00 !important;
+}
+
+/* Убираем фон у ссылок навигации в темной теме */
+body.dark #main-nav .navbar-nav .nav-link {
+    background-color: transparent !important;
+    color: #fff !important;
+    padding: 0 10px;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+}
+
+/* Темный режим для виджета погоды и других секций */
+body.dark .weather-container,
+body.dark .exchange-container,
+body.dark .quote-section,
+body.dark .tips-section {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Темный режим для текста внутри виджетов */
+body.dark .weather-container p,
+body.dark .exchange-container p,
+body.dark .quote-section p,
+body.dark .tips-section p,
+body.dark .weather-container input,
+body.dark .weather-container button {
+    color: #fff !important;
+}
+
+/* Темный режим для кнопок внутри виджетов */
+body.dark .weather-container button,
+body.dark .exchange-container button,
+body.dark .tips-section button {
+    background-color: #333 !important;
+    color: #fff !important;
+    border: 1px solid #555;
+}
+
+body.dark .weather-container input {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+/* Стили для иконок погоды */
+body.dark .weather-icon-container img {
+    filter: brightness(0.8);
+}
+
+/* Сделать название города и температуру светлее в темной теме */
+body.dark .weather-location,
+body.dark .weather-temperature {
+    color: #e0e0e0 !important; /* Более светлый оттенок серого */
+    font-weight: bold;
+}
+
+body.dark .weather-description {
+    color: #cccccc !important; /* Ещё светлее для описания погоды */
+}
+
+

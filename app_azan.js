@@ -128,40 +128,80 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //****************************************PRICE FILTER ДЛЯ SHOP HTML****************************************************************************************
-document.addEventListener('DOMContentLoaded', function() {
-    const priceFilter = document.getElementById('price-filter');
-    const products = document.querySelectorAll('.product');
+document.addEventListener("DOMContentLoaded", function () {
+    const priceFilter = document.getElementById("price-filter");
 
-    priceFilter.addEventListener('change', function() {
-        const selectedPriceRange = priceFilter.value;
+    // Load saved filter from Local Storage
+    const savedPriceFilter = localStorage.getItem("priceFilter") || "all";
+    priceFilter.value = savedPriceFilter;
 
-        products.forEach(product => {
-            const productPrice = parseInt(product.getAttribute('data-price'), 10); // Преобразуем цену в число
-            let showProduct = false;
+    // Apply the filter when the page loads or the filter changes
+    priceFilter.addEventListener("change", function () {
+        const selectedFilter = priceFilter.value;
+        localStorage.setItem("priceFilter", selectedFilter); // Save filter to Local Storage
+        filterProducts(selectedFilter);
+    });
 
-            switch (selectedPriceRange) {
-                case 'low':
-                    if (productPrice < 100) showProduct = true;
-                    break;
-                case 'medium':
-                    if (productPrice >= 100 && productPrice <= 150) showProduct = true;
-                    break;
-                case 'high':
-                    if (productPrice > 150) showProduct = true;
-                    break;
-                default:
-                    showProduct = true; // Показываем все продукты при выборе "All"
-            }
+    function filterProducts(filter) {
+        const sections = document.querySelectorAll("section.container"); // Select all sections
+        sections.forEach(section => {
+            const products = section.querySelectorAll('.product');
+            let sectionHasVisibleProduct = false;
 
-            // Отображаем или скрываем продукт
-            product.style.display = showProduct ? 'block' : 'none';
+            products.forEach(product => {
+                const productPrice = parseFloat(product.getAttribute('data-price'));
+                let showProduct = false;
+
+                if (filter === 'all') {
+                    showProduct = true;
+                } else if (filter === 'low' && productPrice < 100) {
+                    showProduct = true;
+                } else if (filter === 'medium' && productPrice >= 100 && productPrice <= 150) {
+                    showProduct = true;
+                } else if (filter === 'high' && productPrice > 150) {
+                    showProduct = true;
+                }
+
+                product.style.display = showProduct ? "block" : "none";
+                if (showProduct) sectionHasVisibleProduct = true;
+            });
+
+            // Show or hide the section header based on product visibility
+            section.style.display = sectionHasVisibleProduct ? "block" : "none";
         });
 
-        
-    });
-    
-    
+        // Display a styled "Items not found" message if no items are visible
+        const mainContainer = document.querySelector(".container.mt-5"); // Main container for the message
+        let noItemsMessage = document.getElementById("no-items");
+
+        if (![...sections].some(section => section.style.display === "block")) {
+            if (!noItemsMessage) {
+                noItemsMessage = document.createElement("p");
+                noItemsMessage.id = "no-items";
+                noItemsMessage.textContent = "Items not found";
+                
+                // Add custom styles for the "Items not found" message
+                noItemsMessage.style.textAlign = "center";
+                noItemsMessage.style.fontSize = "1.5em";
+                noItemsMessage.style.fontWeight = "600";
+                noItemsMessage.style.color = "#333";
+                noItemsMessage.style.padding = "20px";
+                noItemsMessage.style.border = "2px solid #ddd";
+                noItemsMessage.style.borderRadius = "10px";
+                noItemsMessage.style.backgroundColor = "#f8f9fa";
+                noItemsMessage.style.marginTop = "20px";
+                
+                mainContainer.appendChild(noItemsMessage);
+            }
+        } else if (noItemsMessage) {
+            noItemsMessage.remove();
+        }
+    }
+
+    // Apply saved filter on page load
+    filterProducts(savedPriceFilter);
 });
+
 
 
 
@@ -311,20 +351,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const links = document.querySelectorAll("a"); // Select all anchor links
+document.addEventListener("DOMContentLoaded", function () {
+    // Select all navigation links within the main navigation
+    const navLinks = document.querySelectorAll("#main-nav .nav-link");
 
-    links.forEach(link => {
-        link.addEventListener("click", function(e) {
-            e.preventDefault(); // Prevent the default link behavior
-            const href = this.getAttribute("href"); // Get the href of the clicked link
+    navLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            // Prevent default link navigation
+            event.preventDefault();
 
-            document.body.classList.add("fade-out"); // Add fade-out class
+            // Add the fade-out class to initiate the transition
+            document.body.classList.add("fade-out");
 
-            // Wait for the transition to finish, then navigate
+            // Wait for the CSS transition to complete before changing pages
             setTimeout(() => {
-                window.location.href = href; // Navigate to the new page
-            }, 500); // Match this duration with the CSS transition time
+                window.location.href = this.href;  // Navigate to the link's URL
+            }, 500); // Match the CSS transition duration (0.5s)
         });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const themeToggleButton = document.getElementById("toggle-theme-btn");
+    const savedTheme = localStorage.getItem("theme") || "light";
+    document.body.classList.add(savedTheme);
+
+    themeToggleButton.textContent = savedTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
+
+    themeToggleButton.addEventListener("click", function () {
+        const newTheme = document.body.classList.toggle("dark-mode") ? "dark" : "light";
+        localStorage.setItem("theme", newTheme);
+        themeToggleButton.textContent = newTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
     });
 });

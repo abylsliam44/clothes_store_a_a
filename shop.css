@@ -66,7 +66,7 @@ body {
 .footer-section {
     text-align: center;
     padding: 20px;
-    background-color: #f1f1f1;
+    background-color: #f8f8f8;
     margin-top: 20px;
 }
 
@@ -154,6 +154,20 @@ body {
     transform: translateX(-50%);
 }
 
+#no-items {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
 /* Эффект при наведении */
 .nav-link:hover {
     color: #000;
@@ -234,11 +248,50 @@ body.dark .footer-section {
     border-top: 1px solid #333; /* Optional: a subtle border to separate the footer */
 }
 
-body {
-    opacity: 1;
-    transition: opacity 0.5s ease; /* Transition effect for opacity */
+/* Fade-out effect for smooth page transition */
+body.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-.fade-out {
-    opacity: 0; /* Make the body transparent */
+/* Темный режим для всего сайта */
+body.dark {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Темный режим для навигационной панели */
+body.dark #main-nav {
+    background-color: #000; /* Черный фон для навигации */
+    border-bottom: 1px solid #333; /* Легкая граница для отделения */
+}
+
+body.dark #main-nav .nav-link {
+    color: #fff !important; /* Белый текст для ссылок */
+}
+
+body.dark #main-nav .nav-link:hover {
+    color: #ffcc00 !important; /* Золотистый цвет при наведении */
+}
+
+body.dark #main-nav .nav-link.active {
+    color: #ffcc00 !important; /* Цвет активной ссылки */
+}
+
+/* Темный режим для других элементов */
+body.dark .footer-section,
+body.dark .header-section {
+    background-color: #111;
+    color: #fff;
+}
+
+body.dark .btn {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+body.dark .btn:hover {
+    background-color: #444;
+    color: #fff;
 }

@@ -320,14 +320,6 @@ body {
     color: #000;
 }
 
-#site-footer {
-    background-color: #fff;
-    color: #000;
-    padding: 20px;
-    text-align: center;
-    border-top: 1px solid #ddd;
-}
-
 .footer-text {
     font-size: 1em;
     color: #666;
@@ -1058,11 +1050,74 @@ body.light-mode #manager-message {
     color: white; /* Keep text color white on hover */
 }
 
-body {
-    opacity: 1;
-    transition: opacity 0.5s ease; /* Transition effect for opacity */
+
+/* Fade-out effect for smooth page transition */
+body.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-.fade-out {
-    opacity: 0; /* Make the body transparent */
+footer {
+    background: linear-gradient(135deg, #000, #4a4a4a);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Dark mode for chatbot */
+body.dark .chatbot-container {
+    background-color: #333;
+    border-color: #555;
+}
+
+body.dark .chatbot-header {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark .chatbot-messages {
+    background-color: #333;
+    color: #ddd;
+}
+
+body.dark .user-message {
+    background-color: #555;
+    color: #fff;
+}
+
+body.dark .bot-message {
+    background-color: #444;
+    color: #ddd;
+}
+
+body.dark .chatbot-input-container {
+    background-color: #333;
+}
+
+body.dark #chatbot-input {
+    background-color: #444;
+    color: #fff;
+    border-color: #666;
+}
+
+body.dark #chatbot-send-btn {
+    background-color: #555;
+    color: #fff;
+}
+
+
+body.dark #chatbot-send-btn {
+    padding: 8px 16px;
+    border: 2px solid #fff; /* White border to highlight */
+    border-radius: 4px; /* Slightly rounded corners */
+    background-color: #333; /* Dark background for contrast */
+    color: #fff; /* White text color */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark #chatbot-send-btn:hover {
+    background-color: #555; /* Lighter background on hover */
+    color: #ffcc00; /* Highlighted text color on hover */
 }
