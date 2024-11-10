@@ -2,9 +2,7 @@
 
 ## Project Overview
 
-The A&A Clothing Store is a responsive, interactive web application crafted to deliver a smooth shopping journey. Featuring a variety of fashion items—clothing, shoes, and accessories—the platform presents products in an organized, user-friendly layout. With straightforward navigation, categorized listings, and interactive options like adding items to the cart, toggling themes, and rating products, users can enjoy a modern and immersive experience.
-
-This project prioritizes simplicity, usability, and visual appeal, illustrating how a well-designed e-commerce site can be developed using HTML, CSS, JavaScript, and Bootstrap.
+A&A Clothing Store is an online store of fashionable clothes, shoes and accessories. The site was created with an emphasis on stylish black and white design and ease of use, so that users can conveniently browse and select the desired products. The store offers a variety of product categories, focusing on modern trends and comfortable navigation.
 
 ## Why We Chose This Project
 
