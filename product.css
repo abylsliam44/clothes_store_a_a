@@ -89,7 +89,7 @@ body {
 .add-to-cart {
     margin-top: 20px;
     padding: 15px;
-    background: linear-gradient(135deg, #000, #4a4a4a); /* Цвет навбара */
+    background: linear-gradient(135deg, #000, #4a4a4a);
     color: white;
     cursor: pointer;
     border: none;
@@ -98,11 +98,11 @@ body {
 }
 
 .add-to-cart:hover {
-    background: linear-gradient(135deg, #333, #666); /* Эффект при наведении */
+    background: linear-gradient(135deg, #333, #666); 
 }
 
 #read-more-btn {
-    background: linear-gradient(135deg, #000, #4a4a4a); /* Цвет навбара */
+    background: linear-gradient(135deg, #000, #4a4a4a);
     color: white;
     cursor: pointer;
     border: none;
@@ -112,7 +112,7 @@ body {
 }
 
 #read-more-btn:hover {
-    background: linear-gradient(135deg, #333, #666); /* Эффект при наведении */
+    background: linear-gradient(135deg, #333, #666); 
 }
 
 
@@ -134,7 +134,7 @@ body {
     opacity: 1;
 }
 
-/* General styling for the navigation bar */
+
 #main-nav {
     background-color: #fff;
     padding: 10px 0;
@@ -144,19 +144,19 @@ body {
 
 /* Styling for navigation links */
 .nav-link {
-    font-family: 'Poppins', sans-serif; /* Match font with about.css */
-    color: #000;                        /* Text color */
+    font-family: 'Poppins', sans-serif; 
+    color: #000;                       
     padding: 8px 20px;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 1.2em;                   /* Font size */
+    font-size: 1.2em;                   
     margin: 0 5px;
     position: relative;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Underline effect on hover */
+
 .nav-link::after {
     content: '';
     display: block;
@@ -180,7 +180,7 @@ body {
     width: 100%;
 }
 
-/* Spacing between nav items */
+
 #main-nav .nav-item {
     margin-left: 10px;
     margin-right: 10px;

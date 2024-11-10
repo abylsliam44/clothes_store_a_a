@@ -32,7 +32,7 @@ body {
 #site-header:hover {
     background: linear-gradient(135deg, #333, #666);
 }
-/* Catalog Section */
+
 .catalog {
     display: flex;
     flex-wrap: wrap;
@@ -55,14 +55,13 @@ body {
     color: #555;
 }
 
-/* Image Styling */
 .image-thumbnail {
     width: 100%;
     height: auto;
     border-radius: 5px;
 }
 
-/* Footer */
+
 .footer-section {
     text-align: center;
     padding: 20px;
@@ -96,7 +95,7 @@ body {
     transition: background-color 0.5s ease;
 }
 
-/* Стили для заголовка */
+
 #site-header {
     background: linear-gradient(135deg, #000, #4a4a4a);
     color: white;
@@ -120,7 +119,7 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Стили для навигации */
+
 #main-nav {
     background-color: #fff;
     padding: 10px 0;
@@ -128,14 +127,14 @@ body {
     box-shadow: none;
 }
 
-/* Стили для ссылок навигации */
+
 .nav-link {
     color: #000;
-    padding: 8px 20px; /* Уменьшено значение padding */
+    padding: 8px 20px;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
-    margin: 0 5px; /* Уменьшено значение margin */
+    margin: 0 5px; 
     position: relative;
     transition: color 0.3s ease;
     font-size: 1.2em;
@@ -168,7 +167,7 @@ body {
 }
 
 
-/* Эффект при наведении */
+
 .nav-link:hover {
     color: #000;
     transform: scale(1.05);
@@ -178,20 +177,20 @@ body {
     width: 100%;
 }
 
-/* Уменьшили отступы между пунктами навигации */
+
 #main-nav .nav-item {
-    margin-left: 10px;  /* Уменьшили отступы */
-    margin-right: 10px; /* Уменьшили отступы */
+    margin-left: 10px;  
+    margin-right: 10px; 
 }
 
 
-/* Темная тема для страницы магазина */
+
 body.dark {
     background-color: #000;
     color: #fff;
 }
 
-/* Навигационная панель в темной теме */
+
 body.dark #main-nav {
     background-color: #000;
 }
@@ -202,7 +201,7 @@ body.dark #main-nav .navbar-nav .nav-link {
     box-shadow: none;
 }
 
-/* Стили для заголовков и текста */
+
 body.dark h1, 
 body.dark h2, 
 body.dark h3, 
@@ -211,7 +210,7 @@ body.dark .card-text {
     color: #fff;
 }
 
-/* Карточки товаров в темной теме */
+
 body.dark .card {
     background-color: #000;
     border: 1px solid #333;
@@ -228,7 +227,7 @@ body.dark .card .item-button:hover {
     background-color: #555;
 }
 
-/* Футер в темной теме */
+
 body.dark .footer-section {
     background-color: #000;
     color: #fff;
@@ -238,47 +237,47 @@ body.dark .footer-section {
 body.dark #main-nav,
 body.dark .navbar-collapse,
 body.dark .navbar {
-    background-color: #000 !important; /* Принудительно черный фон */
+    background-color: #000 !important; 
 }
 
-/* Footer styling for dark theme */
+
 body.dark .footer-section {
-    background-color: #000 !important; /* Completely black background */
-    color: #ffffff !important; /* White text color */
-    border-top: 1px solid #333; /* Optional: a subtle border to separate the footer */
+    background-color: #000 !important; 
+    color: #ffffff !important; 
+    border-top: 1px solid #333; 
 }
 
-/* Fade-out effect for smooth page transition */
+
 body.fade-out {
     opacity: 0;
     transition: opacity 0.5s ease;
 }
 
-/* Темный режим для всего сайта */
+
 body.dark {
     background-color: #000;
     color: #fff;
 }
 
-/* Темный режим для навигационной панели */
+
 body.dark #main-nav {
-    background-color: #000; /* Черный фон для навигации */
-    border-bottom: 1px solid #333; /* Легкая граница для отделения */
+    background-color: #000; 
+    border-bottom: 1px solid #333; 
 }
 
 body.dark #main-nav .nav-link {
-    color: #fff !important; /* Белый текст для ссылок */
+    color: #fff !important; 
 }
 
 body.dark #main-nav .nav-link:hover {
-    color: #ffcc00 !important; /* Золотистый цвет при наведении */
+    color: #ffcc00 !important; 
 }
 
 body.dark #main-nav .nav-link.active {
-    color: #ffcc00 !important; /* Цвет активной ссылки */
+    color: #ffcc00 !important; 
 }
 
-/* Темный режим для других элементов */
+
 body.dark .footer-section,
 body.dark .header-section {
     background-color: #111;

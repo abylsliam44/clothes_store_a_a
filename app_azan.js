@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Theme Toggle Button Functionality
+    
     const themeToggle = document.getElementById('theme-toggle');
     themeToggle.addEventListener('click', function () {
         if (document.body.classList.contains('night')) {
@@ -31,12 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextColor();
     });
 
-    // Read More Button Functionality
+    
     document.addEventListener('DOMContentLoaded', function() {
     const readMoreBtn = document.getElementById('read-more-btn');
     const extraContent = document.getElementById('extra-content');
     
-    // Убедитесь, что изначально extraContent скрыт
+    
     extraContent.style.display = 'none';
 
     readMoreBtn.addEventListener('click', function () {
@@ -138,12 +138,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Apply the filter when the page loads or the filter changes
     priceFilter.addEventListener("change", function () {
         const selectedFilter = priceFilter.value;
-        localStorage.setItem("priceFilter", selectedFilter); // Save filter to Local Storage
+        localStorage.setItem("priceFilter", selectedFilter); 
         filterProducts(selectedFilter);
     });
 
     function filterProducts(filter) {
-        const sections = document.querySelectorAll("section.container"); // Select all sections
+        const sections = document.querySelectorAll("section.container"); 
         sections.forEach(section => {
             const products = section.querySelectorAll('.product');
             let sectionHasVisibleProduct = false;
@@ -170,8 +170,8 @@ document.addEventListener("DOMContentLoaded", function () {
             section.style.display = sectionHasVisibleProduct ? "block" : "none";
         });
 
-        // Display a styled "Items not found" message if no items are visible
-        const mainContainer = document.querySelector(".container.mt-5"); // Main container for the message
+        
+        const mainContainer = document.querySelector(".container.mt-5"); 
         let noItemsMessage = document.getElementById("no-items");
 
         if (![...sections].some(section => section.style.display === "block")) {
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 noItemsMessage.id = "no-items";
                 noItemsMessage.textContent = "Items not found";
                 
-                // Add custom styles for the "Items not found" message
+                
                 noItemsMessage.style.textAlign = "center";
                 noItemsMessage.style.fontSize = "1.5em";
                 noItemsMessage.style.fontWeight = "600";
@@ -208,22 +208,22 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const priceFilter = document.getElementById("price-filter");
 
-    // Загружаем сохраненный фильтр из Local Storage
+    
     const savedPriceFilter = localStorage.getItem("priceFilter") || "all";
     priceFilter.value = savedPriceFilter;
 
-    // Фильтруем результаты
+    
     priceFilter.addEventListener("change", function () {
         const selectedFilter = priceFilter.value;
 
-        // Сохраняем выбранный фильтр в Local Storage
+        
         localStorage.setItem("priceFilter", selectedFilter);
 
-        // Применяем фильтр к товарам
+        
         filterProducts(selectedFilter);
     });
 
-    // Функция фильтрации продуктов
+    
     function filterProducts(filter) {
         const products = document.querySelectorAll('.product');
         products.forEach(product => {
@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Применяем сохраненный фильтр при загрузке страницы
+    
     filterProducts(savedPriceFilter);
 });
 
@@ -324,21 +324,21 @@ document.addEventListener("DOMContentLoaded", function () {
     // Keyboard event handling for navigation
     document.addEventListener("keydown", function (event) {
         switch (event.key) {
-            case "ArrowRight": // Move to the next navigation item
+            case "ArrowRight": 
                 currentNavIndex = (currentNavIndex + 1) % navItems.length;
                 updateNavFocus();
                 break;
-            case "ArrowLeft": // Move to the previous navigation item
+            case "ArrowLeft": 
                 currentNavIndex = (currentNavIndex - 1 + navItems.length) % navItems.length;
                 updateNavFocus();
                 break;
-            case "Enter": // Activate the focused navigation item
+            case "Enter": 
                 navItems[currentNavIndex].click();
                 break;
-            case "T": // Toggle theme
+            case "T": 
                 document.getElementById("toggle-theme-btn").click();
                 break;
-            case "Escape": // Close popup if open
+            case "Escape": 
                 const popupOverlay = document.getElementById("popup-overlay");
                 if (popupOverlay && popupOverlay.style.display === "flex") {
                     popupOverlay.style.display = "none";
@@ -352,21 +352,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Select all navigation links within the main navigation
+    
     const navLinks = document.querySelectorAll("#main-nav .nav-link");
 
     navLinks.forEach(link => {
         link.addEventListener("click", function (event) {
-            // Prevent default link navigation
+            
             event.preventDefault();
 
-            // Add the fade-out class to initiate the transition
+            
             document.body.classList.add("fade-out");
 
-            // Wait for the CSS transition to complete before changing pages
+            
             setTimeout(() => {
-                window.location.href = this.href;  // Navigate to the link's URL
-            }, 500); // Match the CSS transition duration (0.5s)
+                window.location.href = this.href;  
+            }, 500); 
         });
     });
 });

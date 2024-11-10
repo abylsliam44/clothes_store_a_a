@@ -52,7 +52,7 @@ main {
     line-height: 1.6;
 }
 
-/* Founder photos */
+
 .founders-container {
     display: flex;
     justify-content: center;
@@ -79,7 +79,7 @@ main {
     transform: scale(1.1);
 }
 
-/* Values Section Styling */
+
 .values-section {
     max-width: 600px;
     margin: 0 auto;
@@ -102,9 +102,9 @@ blockquote {
     margin-top: 10px;
 }
 
-/* Read More Section Styling */
+
 #read-more-btn {
-    background: linear-gradient(135deg, #000, #4a4a4a); /* Цвет навбара */
+    background: linear-gradient(135deg, #000, #4a4a4a); 
     color: white;
     cursor: pointer;
     border: none;
@@ -114,18 +114,18 @@ blockquote {
 }
 
 #read-more-btn:hover {
-    background: linear-gradient(135deg, #333, #666); /* Эффект при наведении */
+    background: linear-gradient(135deg, #333, #666); 
 }
 
 
-/* Footer Section */
+
 .footer-section {
     background-color: #f4f4f4;
     text-align: center;
     padding: 20px;
 }
 
-/* Общий стиль для навигационной панели */
+
 #main-nav {
     background-color: #fff;
     padding: 10px 0;
@@ -133,7 +133,7 @@ blockquote {
     box-shadow: none;
 }
 
-/* Стили для элементов навигации */
+
 .nav-link {
     color: #000;
     padding: 8px 20px;
@@ -146,7 +146,7 @@ blockquote {
     font-size: 1.2em;
 }
 
-/* Псевдоэлемент для линии под текстом */
+
 .nav-link::after {
     content: '';
     display: block;
@@ -160,7 +160,6 @@ blockquote {
     transform: translateX(-50%);
 }
 
-/* Эффект при наведении */
 .nav-link:hover {
     color: #000;
     transform: scale(1.05);
@@ -170,12 +169,11 @@ blockquote {
     width: 100%;
 }
 
-/* Отступы между элементами */
 #main-nav .nav-item {
     margin-left: 10px;
     margin-right: 10px;
 }
-/* Fade-out effect for smooth page transition */
+
 body.fade-out {
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -188,13 +186,13 @@ footer {
     padding: 20px;
 }
 
-/* Темный стиль для основного фона страницы */
+
 body.dark {
     background-color: #000 !important;
     color: #fff !important;
 }
 
-/* Темный стиль для всех контейнеров и секций */
+
 body.dark #main-nav,
 body.dark #site-header,
 body.dark #site-footer,

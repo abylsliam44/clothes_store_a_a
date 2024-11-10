@@ -297,11 +297,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Variables for navigation items and initial index
+    
     const navItems = document.querySelectorAll("#main-nav .nav-link");
     let currentNavIndex = 0;
 
-    // Update the focus on navigation items
+    
     function updateNavFocus() {
         navItems.forEach((item, index) => {
             item.classList.toggle("focused", index === currentNavIndex);
@@ -309,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
         navItems[currentNavIndex].focus();
     }
 
-    // Initial focus
+    
     updateNavFocus();
 
     // Keyboard event handling for navigation
@@ -319,17 +319,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentNavIndex = (currentNavIndex + 1) % navItems.length;
                 updateNavFocus();
                 break;
-            case "ArrowLeft": // Move to the previous navigation item
+            case "ArrowLeft": 
                 currentNavIndex = (currentNavIndex - 1 + navItems.length) % navItems.length;
                 updateNavFocus();
                 break;
-            case "Enter": // Activate the focused navigation item
+            case "Enter": 
                 navItems[currentNavIndex].click();
                 break;
-            case "T": // Toggle theme
+            case "T": 
                 document.getElementById("toggle-theme-btn").click();
                 break;
-            case "Escape": // Close popup if open
+            case "Escape": 
                 const popupOverlay = document.getElementById("popup-overlay");
                 if (popupOverlay && popupOverlay.style.display === "flex") {
                     popupOverlay.style.display = "none";
@@ -351,9 +351,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const chatbotInput = document.getElementById("chatbot-input");
     const chatbotMessages = document.getElementById("chatbot-messages");
     const chatbotSendBtn = document.getElementById("chatbot-send-btn");
-    const themeToggleBtn = document.getElementById("toggle-theme-btn"); // Button to toggle theme
+    const themeToggleBtn = document.getElementById("toggle-theme-btn"); 
 
-    // Load sound effect
+    
     const sendSound = new Audio("sound_abylay/level-up-191997.mp3");
 
     // Show chatbot and display instructions
@@ -363,7 +363,7 @@ document.addEventListener("DOMContentLoaded", function() {
         displayInstructions();
     });
 
-    // Close chatbot
+    
     closeChatbotBtn.addEventListener("click", () => {
         chatbotContainer.style.display = "none";
         openChatbotBtn.style.display = "block";
@@ -377,7 +377,7 @@ document.addEventListener("DOMContentLoaded", function() {
         chatbotMessages.appendChild(message);
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 
-        // Play sound effect for user messages
+        
         if (isUser) sendSound.play();
     }
 
@@ -425,13 +425,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Event listener for "Send" button
+    
     chatbotSendBtn.addEventListener("click", sendMessage);
 
-    // Event listener for "Enter" key in the input field
+    
     chatbotInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
-            e.preventDefault(); // Prevents page reload or form submission
+            e.preventDefault(); 
             sendMessage();
         }
     });
@@ -463,23 +463,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Function to handle the fade-out transition
+    
     function addFadeOutTransition(event, targetUrl) {
         event.preventDefault();
         document.body.classList.add("fade-out");
         setTimeout(() => {
             window.location.href = targetUrl;
-        }, 500); // 500ms delay for fade-out effect
+        }, 500); 
     }
 
-    // Apply fade-out transition for main navigation links
+    
     document.querySelectorAll("#main-nav .nav-link").forEach(link => {
         link.addEventListener("click", function (event) {
             addFadeOutTransition(event, this.href);
         });
     });
 
-    // Apply fade-out transition for #shop-now-btn and #learn-more-btn buttons
+    
     document.querySelectorAll("#shop-now-btn, #learn-more-btn").forEach(button => {
         button.addEventListener("click", function (event) {
             addFadeOutTransition(event, this.getAttribute("data-href"));

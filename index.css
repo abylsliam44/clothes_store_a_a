@@ -33,7 +33,7 @@ body {
 }
 
 #banner-section {
-    background: url('images_abylay/photo_2024-11-06_12-11-59.jpg') no-repeat center center; /* Add your background */
+    background: url('images_abylay/photo_2024-11-06_12-11-59.jpg') no-repeat center center; 
     background-size: cover;
     padding: 60px 20px;
     text-align: center;
@@ -88,7 +88,7 @@ body {
     margin-bottom: 30px;
     position: relative;
     padding: 20px;
-    background: linear-gradient(45deg, #a7a09e, #000000); /* Gradient background */
+    background: linear-gradient(45deg, #a7a09e, #000000);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -109,7 +109,7 @@ body {
     }
 }
 
-/* Date and Time Display Styling */
+
 #date-time-display {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
@@ -259,7 +259,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 100%; /* Ensure equal height */
+    height: 100%; 
 }
 
 #popular-items img {
@@ -325,7 +325,7 @@ body {
     color: #666;
 }
 
-/* Кнопка смены фона */
+
 #change-bg-btn {
     background-color: #000;
     color: white;
@@ -369,7 +369,6 @@ body {
     }
 }
 
-/* Анимация кнопок */
 .btn-animate {
     position: relative;
     transition: all 0.3s ease;
@@ -398,7 +397,7 @@ body {
     color: #fff;
 }
 
-/* Star Rating System */
+
 .rating-star {
     font-size: 2.5em;
     color: #ccc;
@@ -420,7 +419,7 @@ body {
 }
 
 
-/* Futuristic Button Styling */
+
 .futuristic-btn {
     background: linear-gradient(135deg, #c7bfbd, #171616);
     border: none;
@@ -438,13 +437,13 @@ body {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Button Hover Effects */
+
 .futuristic-btn:hover {
     background: linear-gradient(135deg, #a1a1a1, #2b211e);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Button Click Pulse Effect */
+
 .futuristic-btn:before {
     content: '';
     position: absolute;
@@ -478,7 +477,7 @@ body {
     background: linear-gradient(135deg, #4a4143, #75798d);
 }
 
-/* Glow Effect for Buttons */
+
 .futuristic-btn:hover::before {
     transform: translate(-50%, -50%) scale(1.5);
     transition: transform 0.5s ease;
@@ -505,7 +504,7 @@ body {
     display: inline-block;
 }
 
-/* Input Field Styling */
+
 .form-group input {
     padding: 15px;
     border: 2px solid #ddd;
@@ -536,7 +535,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Оформление контейнера для новых фич */
+
 #features-container {
     background-color: #f8f9fa;
     padding: 40px;
@@ -546,7 +545,7 @@ body {
     text-align: center;
 }
 
-/* Оформление секции входа/выхода */
+
 #auth-section {
     background-color: #ffffff;
     padding: 20px;
@@ -596,7 +595,7 @@ body {
     background-color: #0056b3;
 }
 
-/* Оформление переключателя темы */
+
 #theme-switcher {
     background-color: #ffffff;
     padding: 15px;
@@ -620,7 +619,7 @@ body {
     background-color: #0056b3;
 }
 
-/* Оформление секции фильтрации */
+
 #filter-section {
     background-color: #ffffff;
     padding: 20px;
@@ -657,12 +656,12 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Оформление списка продуктов */
+
 #product-list {
     margin-top: 30px;
 }
 
-/* Общие стили для элементов */
+
 #features-container button {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -675,7 +674,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Стили для бокового меню с категориями и фильтром */
+
 #sidebar-menu {
     flex: 1;
     min-width: 200px;
@@ -711,13 +710,13 @@ body {
     color: #777;
 }
 
-/* Стили для секции фильтрации */
+
 #filter-section {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 30px; /* Отступ сверху, чтобы отделить от категорий */
+    margin-top: 30px; 
 }
 
 #filter-section h3 {
@@ -746,13 +745,13 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Светлая тема (по умолчанию) */
+
 body.light {
     background-color: #ffffff;
     color: #000000;
 }
 
-/* Темная тема */
+
 body.dark {
     background-color: #121212;
     color: #ffffff;
@@ -760,13 +759,13 @@ body.dark {
 
 
 .card img {
-    object-fit: cover; /* Обеспечит, чтобы изображение вписывалось в заданные размеры */
+    object-fit: cover; 
     width: 100%;
-    height: 250px; /* Установите подходящую высоту для изображений */
+    height: 250px; 
 
 }
 
-/* Темная тема для всего сайта */
+
 body.dark {
     background-color: #000;
     color: #fff;
@@ -845,37 +844,37 @@ body.dark .list-group-item {
     color: #fff !important;
 }
 
-/* Стили для текста и ссылок */
+
 body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6,
 body.dark p, body.dark a, body.dark span, body.dark .category-item, body.dark .navbar-nav .nav-link {
     color: #fff !important;
 }
 
-/* Белый цвет для всех кнопок в темной теме */
+
 body.dark button, body.dark .btn, body.dark #change-bg-btn {
     color: #fff !important;
     background-color: #333 !important;
     border: 1px solid #555;
 }
 
-/* Темные стили для выделения элементов навигации */
+
 body.dark .navbar-nav .nav-link:hover, body.dark .navbar-nav .nav-link.active {
     color: #ffcc00 !important;
 }
-/* Убираем фон у ссылок навигации в темной теме */
+
 body.dark #main-nav .navbar-nav .nav-link {
-    background-color: transparent !important; /* Прозрачный фон */
-    color: #fff !important; /* Белый текст */
-    padding: 0 10px; /* Убираем лишние отступы */
-    margin: 0; /* Убираем внешние отступы */
-    box-shadow: none; /* Убираем тени, если они есть */
-    border: none; /* Убираем рамки */
+    background-color: transparent !important; 
+    color: #fff !important; 
+    padding: 0 10px; 
+    margin: 0; 
+    box-shadow: none; 
+    border: none; 
 }
 
 /* Default light mode styles */
 #popup-content h2,
 #popup-content p {
-    color: #333; /* Dark text for light mode */
+    color: #333; 
 }
 
 #popup-content {
@@ -883,7 +882,7 @@ body.dark #main-nav .navbar-nav .nav-link {
     color: #333;
 }
 
-/* Dark mode styles */
+
 body.dark-mode #popup-content {
     background-color: #333;
     color: #fff;
@@ -910,7 +909,7 @@ body.light-mode #manager-message {
     border: 1px solid #ccc;
 }
 
-/* Chatbot styling */
+
 .chatbot-container {
     display: none;
     position: fixed;
@@ -918,14 +917,14 @@ body.light-mode #manager-message {
     right: 20px;
     width: 320px;
     height: 450px;
-    background-color: #fdf6e3; /* Light beige background for the chatbot container */
-    border: 1px solid #e2c79f; /* Beige border */
+    background-color: #fdf6e3; 
+    border: 1px solid #e2c79f; 
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .chatbot-header {
-    background-color: #e2c79f; /* Beige header */
+    background-color: #e2c79f;
     color: #333;
     padding: 12px;
     border-top-left-radius: 10px;
@@ -952,7 +951,7 @@ body.light-mode #manager-message {
     padding: 12px;
     overflow-y: auto;
     height: 330px;
-    background-color: #fff; /* Bright white for message area */
+    background-color: #fff; 
     color: #333;
 }
 
@@ -960,7 +959,7 @@ body.light-mode #manager-message {
     margin: 10px 0;
     padding: 10px;
     border-radius: 10px;
-    background-color: #cce5ff; /* Light blue for user messages */
+    background-color: #cce5ff; 
     color: #004085;
     align-self: flex-end;
     max-width: 85%;
@@ -971,7 +970,7 @@ body.light-mode #manager-message {
     margin: 10px 0;
     padding: 10px;
     border-radius: 10px;
-    background-color: #fdf6e3; /* Light beige for bot messages */
+    background-color: #fdf6e3; 
     color: #333;
     align-self: flex-start;
     max-width: 85%;
@@ -981,7 +980,7 @@ body.light-mode #manager-message {
 .chatbot-input-container {
     display: flex;
     padding: 12px;
-    background-color: #fdf6e3; /* Matches container for a cohesive look */
+    background-color: #fdf6e3; 
 }
 
 #chatbot-input {
@@ -995,7 +994,7 @@ body.light-mode #manager-message {
 }
 
 #chatbot-send-btn {
-    background-color: #e2c79f; /* Beige for send button */
+    background-color: #e2c79f; 
     color: #333;
     border: none;
     padding: 10px 12px;
@@ -1006,14 +1005,14 @@ body.light-mode #manager-message {
 }
 
 #chatbot-send-btn:hover {
-    background-color: #d1b68b; /* Slightly darker beige on hover */
+    background-color: #d1b68b; 
 }
 
 .open-chatbot-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #e2c79f; /* Beige for main button */
+    background-color: #e2c79f; 
     color: #333;
     border: none;
     padding: 12px 18px;
@@ -1027,7 +1026,7 @@ body.light-mode #manager-message {
 }
 
 .shop-btn {
-    background-color: #D2B48C; /* Beige color */
+    background-color: #D2B48C;
     color: #000;
     padding: 10px 20px;
     border: none;
@@ -1036,22 +1035,22 @@ body.light-mode #manager-message {
 }
 
 .shop-btn:hover {
-    background-color: #C0A080; /* Slightly darker beige on hover */
+    background-color: #C0A080; 
 }
 
 .btn-black {
-    background-color: black; /* Black background */
-    color: white; /* White text */
-    border: none; /* Remove border */
+    background-color: black; 
+    color: white; 
+    border: none; 
 }
 
 .btn-black:hover {
-    background-color: #333; /* Darker shade on hover */
-    color: white; /* Keep text color white on hover */
+    background-color: #333; 
+    color: white; 
 }
 
 
-/* Fade-out effect for smooth page transition */
+
 body.fade-out {
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -1108,16 +1107,16 @@ body.dark #chatbot-send-btn {
 
 body.dark #chatbot-send-btn {
     padding: 8px 16px;
-    border: 2px solid #fff; /* White border to highlight */
-    border-radius: 4px; /* Slightly rounded corners */
-    background-color: #333; /* Dark background for contrast */
-    color: #fff; /* White text color */
+    border: 2px solid #fff; 
+    border-radius: 4px; 
+    background-color: #333; 
+    color: #fff; 
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark #chatbot-send-btn:hover {
-    background-color: #555; /* Lighter background on hover */
-    color: #ffcc00; /* Highlighted text color on hover */
+    background-color: #555; 
+    color: #ffcc00; 
 }

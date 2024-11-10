@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(updateMessage, 2000);
 });
 
-// Quote and Fashion Tips Feature
+// Quote and Fashion Tips 
 document.addEventListener('DOMContentLoaded', function () {
     const quotes = [
         "You can have anything you want in life if you dress for it. – Edith Head",
@@ -226,30 +226,30 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const themeToggleButton = document.getElementById("toggle-theme-btn"); // Кнопка переключения темы
-    const savedTheme = localStorage.getItem("theme") || "light"; // Получаем сохраненную тему из localStorage
+    const themeToggleButton = document.getElementById("toggle-theme-btn"); 
+    const savedTheme = localStorage.getItem("theme") || "light"; 
 
-    // Устанавливаем начальную тему при загрузке страницы
+    
     if (savedTheme === "dark") {
         document.body.classList.add("dark");
-        themeToggleButton.textContent = "Switch to Light Mode"; // Измените текст кнопки
+        themeToggleButton.textContent = "Switch to Light Mode"; 
     } else {
         document.body.classList.add("light");
-        themeToggleButton.textContent = "Switch to Dark Mode"; // Измените текст кнопки
+        themeToggleButton.textContent = "Switch to Dark Mode"; 
     }
 
-    // Слушатель событий для переключения темы
+    
     themeToggleButton.addEventListener("click", function () {
         if (document.body.classList.contains("dark")) {
             document.body.classList.remove("dark");
             document.body.classList.add("light");
             themeToggleButton.textContent = "Switch to Dark Mode";
-            localStorage.setItem("theme", "light"); // Сохраняем светлый режим в localStorage
+            localStorage.setItem("theme", "light"); 
         } else {
             document.body.classList.remove("light");
             document.body.classList.add("dark");
             themeToggleButton.textContent = "Switch to Light Mode";
-            localStorage.setItem("theme", "dark"); // Сохраняем темный режим в localStorage
+            localStorage.setItem("theme", "dark"); 
         }
     });
 });
