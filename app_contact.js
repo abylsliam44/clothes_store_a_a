@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
 // Quote and Fashion Tips Feature
 document.addEventListener('DOMContentLoaded', function () {
     const quotes = [
-        "Fashion is the armor to survive the reality of everyday life. – Bill Cunningham",
+        "You can have anything you want in life if you dress for it. – Edith Head",
+        "Clothes mean nothing until someone lives in them. – Marc Jacobs",
         "Style is a way to say who you are without having to speak. – Rachel Zoe",
-        "Elegance is the only beauty that never fades. – Audrey Hepburn",
         "Fashion is about something that comes from within you. – Ralph Lauren",
-        "The joy of dressing is an art. – John Galliano"
+        "Elegance is good taste, plus a dash of daring. – Carmel Snow"
     ];
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     const quoteElement = document.getElementById('quote-display');
