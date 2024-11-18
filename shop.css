@@ -233,7 +233,7 @@ body.dark .footer-section {
     color: #fff;
 }
 
-/* Полностью черный фон для навигации и раскрывающейся части */
+
 body.dark #main-nav,
 body.dark .navbar-collapse,
 body.dark .navbar {
@@ -260,21 +260,13 @@ body.dark {
 }
 
 
-body.dark #main-nav {
-    background-color: #000; 
-    border-bottom: 1px solid #333; 
-}
-
-body.dark #main-nav .nav-link {
+body.dark #main-nav .navbar-nav .nav-link {
+    background-color: transparent !important; 
     color: #fff !important; 
-}
-
-body.dark #main-nav .nav-link:hover {
-    color: #ffcc00 !important; 
-}
-
-body.dark #main-nav .nav-link.active {
-    color: #ffcc00 !important; 
+    padding: 0 10px; 
+    margin: 0; 
+    box-shadow: none; 
+    border: none; 
 }
 
 
@@ -293,4 +285,15 @@ body.dark .btn {
 body.dark .btn:hover {
     background-color: #444;
     color: #fff;
+}
+
+body.dark .product-price {
+    color: #fff !important; 
+    transition: color 0.3s ease; 
+}
+
+body.dark #no-items {
+    background-color: #000 !important; 
+    color: #fff !important; 
+    border: 1px solid #333; 
 }

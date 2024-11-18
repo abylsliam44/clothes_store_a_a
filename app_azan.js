@@ -13,24 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
             element.style.color = textColor;
         });
     }
-
-    
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.addEventListener('click', function () {
-        if (document.body.classList.contains('night')) {
-            document.body.classList.remove('night');
-            document.body.classList.add('day');
-            document.body.style.backgroundColor = '#fff';
-            document.body.style.color = '#333';
-        } else {
-            document.body.classList.remove('day');
-            document.body.classList.add('night');
-            document.body.style.backgroundColor = '#333';
-            document.body.style.color = '#fff';
-        }
-        updateTextColor();
-    });
-
     
     document.addEventListener('DOMContentLoaded', function() {
     const readMoreBtn = document.getElementById('read-more-btn');
@@ -70,18 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const now = new Date();
         const currentTime = now.toLocaleTimeString();
         currentTimeDisplay.textContent = "Current Time: " + currentTime;
-    });
-
-
-    // Star Rating System
-    const stars = document.querySelectorAll('.star-rating .fa');
-    stars.forEach((star, index) => {
-        star.addEventListener('click', function () {
-            stars.forEach(s => s.classList.remove('checked'));
-            for (let i = 0; i <= index; i++) {
-                stars[i].classList.add('checked');
-            }
-        });
     });
 
 });
@@ -252,32 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
     filterProducts(savedPriceFilter);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const toggleThemeBtn = document.getElementById("toggle-theme-btn");
-    const currentTheme = localStorage.getItem("theme") || "light";
 
-    if (currentTheme === "dark") {
-        document.body.classList.add("dark");
-        toggleThemeBtn.textContent = "Switch to Light Mode";
-    } else {
-        document.body.classList.add("light");
-        toggleThemeBtn.textContent = "Switch to Dark Mode";
-    }
-
-    toggleThemeBtn.addEventListener("click", function () {
-        if (document.body.classList.contains("light")) {
-            document.body.classList.remove("light");
-            document.body.classList.add("dark");
-            toggleThemeBtn.textContent = "Switch to Light Mode";
-            localStorage.setItem("theme", "dark");
-        } else {
-            document.body.classList.remove("dark");
-            document.body.classList.add("light");
-            toggleThemeBtn.textContent = "Switch to Dark Mode";
-            localStorage.setItem("theme", "light");
-        }
-    });
-});
 document.addEventListener("DOMContentLoaded", function () {
     const themeToggleBtn = document.getElementById("theme-toggle");
     const currentTheme = localStorage.getItem("theme") || "light";
@@ -306,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Variables for navigation items and initial index
+    
     const navItems = document.querySelectorAll("#main-nav .nav-link");
     let currentNavIndex = 0;
 
@@ -318,10 +263,10 @@ document.addEventListener("DOMContentLoaded", function () {
         navItems[currentNavIndex].focus();
     }
 
-    // Initial focus
+
     updateNavFocus();
 
-    // Keyboard event handling for navigation
+
     document.addEventListener("keydown", function (event) {
         switch (event.key) {
             case "ArrowRight": 
@@ -352,36 +297,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    
-    const navLinks = document.querySelectorAll("#main-nav .nav-link");
+    const navLinks = document.querySelectorAll("a");
 
     navLinks.forEach(link => {
         link.addEventListener("click", function (event) {
-            
-            event.preventDefault();
+            const targetHref = this.getAttribute("href");
+            if (targetHref && !targetHref.startsWith("#")) { 
+                event.preventDefault();
+                document.body.classList.add("fade-out");
 
-            
-            document.body.classList.add("fade-out");
-
-            
-            setTimeout(() => {
-                window.location.href = this.href;  
-            }, 500); 
+                setTimeout(() => {
+                    window.location.href = targetHref;
+                }, 500); 
+            }
         });
     });
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const themeToggleButton = document.getElementById("toggle-theme-btn");
-    const savedTheme = localStorage.getItem("theme") || "light";
-    document.body.classList.add(savedTheme);
-
-    themeToggleButton.textContent = savedTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
-
-    themeToggleButton.addEventListener("click", function () {
-        const newTheme = document.body.classList.toggle("dark-mode") ? "dark" : "light";
-        localStorage.setItem("theme", newTheme);
-        themeToggleButton.textContent = newTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
-    });
-});

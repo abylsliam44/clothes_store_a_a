@@ -145,26 +145,56 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const exchangeContainer = document.querySelector(".exchange-container");
 
-    function fetchKZTExchangeRates() {
-        fetch("https://api.exchangerate-api.com/v4/latest/KZT")
-            .then(response => response.json())
+    function fetchExchangeRates() {
+        const apiKey = "4961ac1c61713670fc594231"; 
+        const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
+
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
-                const rates = data.rates;
+                const rates = data.conversion_rates; 
                 const date = new Date().toLocaleDateString();
 
+                
+                const kztRate = rates.KZT;
+
+                
+                const usdToKzt = (1 * kztRate).toFixed(2); 
+                const eurToKzt = (rates.EUR * kztRate).toFixed(2); 
+                const rubToKzt = (kztRate / rates.RUB).toFixed(2); 
+
+                
                 exchangeContainer.innerHTML = `
                     <h4>Currency Exchange Rates (KZT)</h4>
                     <p>Date: ${date}</p>
-                    <p><img src="images_abylay/Flag_of_the_United_States.png" alt="USD Flag" class="currency-flag"> 1 KZT = ${(1 / rates.USD).toFixed(4)} USD</p>
-                    <p><img src="images_abylay/Flag_of_Europe.svg.png" alt="EUR Flag" class="currency-flag"> 1 KZT = ${(1 / rates.EUR).toFixed(4)} EUR</p>
-                    <p><img src="images_abylay/Flag_of_Russia.png" alt="RUB Flag" class="currency-flag"> 1 KZT = ${(1 / rates.RUB).toFixed(4)} RUB</p>
+                    <p>
+                        <img src="images_abylay/Flag_of_the_United_States.png" alt="USD Flag" class="currency-flag">
+                        1 USD = ${usdToKzt} KZT
+                    </p>
+                    <p>
+                        <img src="images_abylay/Flag_of_Europe.svg.png" alt="EUR Flag" class="currency-flag">
+                        1 EUR = ${eurToKzt} KZT
+                    </p>
+                    <p>
+                        <img src="images_abylay/Flag_of_Russia.png" alt="RUB Flag" class="currency-flag">
+                        1 RUB = ${rubToKzt} KZT
+                    </p>
                 `;
             })
-            .catch(error => console.error("Error fetching exchange rates:", error));
+            .catch(error => {
+                console.error("Error fetching exchange rates:", error);
+                exchangeContainer.innerHTML = "<p>Error fetching exchange rates. Please try again later.</p>";
+            });
     }
 
-    fetchKZTExchangeRates();
+    fetchExchangeRates();
 });
+
 
 // Keyboard Navigation Feature
 document.addEventListener('DOMContentLoaded', function () {
